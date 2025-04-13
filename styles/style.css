@@ -3,7 +3,7 @@
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
+✦ heart-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
@@ -263,7 +263,7 @@ article:not(:last-of-type) {
   outline: none;
 }
 
-.like-icon {
+.heart-icon {
   inline-size: 39px;
   block-size: 36px;
 }

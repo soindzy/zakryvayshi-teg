@@ -1,16 +1,16 @@
 /* этот скрипт использует такие имена классов:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+✦ heart-icon — для svg-иконки анимированного сердца
+✦ like-btn — для кнопки Like рядом с иконкой
+✦ heart-btn — для кнопки, оборачивающей иконку
+✦ heart-btn — для кнопки, оборачивающей иконку
+✦ heart-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ btn-text — для обозначения текстового элемента внутри кнопки
 Если эти классы поменять в HTML, скрипт перестанет работать. Будьте аккуратны.
 */
 
-const likeHeartArray = document.querySelectorAll('.like-icon');
-const likeButtonArray = document.querySelectorAll('.card__like-button');
-const iconButtonArray = document.querySelectorAll('.card__icon-button');
+const likeHeartArray = document.querySelectorAll('.heart-icon');
+const likeButtonArray = document.querySelectorAll('.like-btn');
+const iconButtonArray = document.querySelectorAll('.heart-btn');
 
 iconButtonArray.forEach((iconButton, index) => {
   iconButton.onclick = () =>
@@ -22,19 +22,19 @@ likeButtonArray.forEach((button, index) => {
 });
 
 function toggleIsLiked(heart, button) {
-  heart.classList.toggle('is-liked');
+  heart.classList.toggle('heart-liked');
   setButtonText(heart, button);
 }
 
 function setButtonText(heart, button) {
-  if ([...heart.classList].includes('is-liked')) {
+  if ([...heart.classList].includes('heart-liked')) {
     setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Unlike'),
+      () => (button.querySelector('.btn-text').textContent = 'Unlike'),
       500
     );
   } else {
     setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Like'),
+      () => (button.querySelector('.btn-text').textContent = 'Like'),
       500
     );
   }
