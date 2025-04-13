@@ -3,12 +3,12 @@
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+✦ heart-icon — для svg-иконки анимированного сердца
+✦ like-btn — для кнопки Like рядом с иконкой
+✦ heart-btn — для кнопки, оборачивающей иконку
+✦ heart-btn — для кнопки, оборачивающей иконку
+✦ heart-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ btn-text — для обозначения текстового элемента внутри кнопки
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
@@ -242,7 +242,7 @@ article:not(:last-of-type) {
   margin-block-end: 25px;
 }
 
-.card__icon-button-container {
+.heart-btn-container {
   display: flex;
   flex-direction: row;
   justify-self: flex-end;
@@ -250,7 +250,7 @@ article:not(:last-of-type) {
   column-gap: 4px;
 }
 
-.card__icon-button {
+.heart-btn {
   padding: 0;
   background-color: transparent;
   border: 2px solid;
@@ -259,11 +259,11 @@ article:not(:last-of-type) {
   cursor: pointer;
 }
 
-.card__icon-button:focus {
+.heart-btn:focus {
   outline: none;
 }
 
-.like-icon {
+.heart-icon {
   inline-size: 39px;
   block-size: 36px;
 }
@@ -272,7 +272,7 @@ article:not(:last-of-type) {
   opacity: 0;
 }
 
-.card__like-button {
+.like-btn {
   inline-size: 130px;
   block-size: 38px;
 }
@@ -301,7 +301,7 @@ article:not(:last-of-type) {
   outline: none;
 }
 
-.button__text {
+.btn-text {
   font-family: var(--accent-font), fantasy;
   font-weight: var(--font-weight, 400);
   font-size: 14px;
