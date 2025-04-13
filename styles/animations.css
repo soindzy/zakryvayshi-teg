@@ -3,12 +3,12 @@
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
-✦ heart-icon — для svg-иконки анимированного сердца
-✦ like-btn — для кнопки Like рядом с иконкой
-✦ heart-btn — для кнопки, оборачивающей иконку
-✦ heart-btn — для кнопки, оборачивающей иконку
-✦ heart-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ btn-text — для обозначения текстового элемента внутри кнопки
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
@@ -51,11 +51,11 @@
 
 /* --------------------------------------------------------- */
 
-.heart-btn {
+.card__icon-button {
   transition: border-color 0.3s ease;
 }
 
-.heart-btn:focus-visible {
+.card__icon-button:focus-visible {
   border-color: var(--accent-color);
 }
 
@@ -65,17 +65,17 @@
   transition: fill 0.3s 0.03s linear;
 }
 
-.heart-icon:hover .core {
+.like-icon:hover .core {
   fill: var(--accent-color);
   transition: fill 0.3s linear;
 }
 
-.heart-icon:active .core {
+.like-icon:active .core {
   fill: var(--heart-fill);
   transition: fill 0.3s linear;
 }
 
-.heart-icon.heart-liked .core {
+.like-icon.is-liked .core {
   fill: var(--heart-fill);
   transition: fill 0.3s linear;
 }
@@ -86,31 +86,31 @@
   transition: fill 0.3s linear;
 }
 
-.heart-icon:hover .main-body {
+.like-icon:hover .main-body {
   fill: var(--accent-color);
   transition: fill 0.3s 0.05s linear;
 }
 
-.heart-icon:active .main-body {
+.like-icon:active .main-body {
   fill: var(--heart-fill);
   transition: fill 0.3s 0.05s linear;
 }
 
-.heart-icon.heart-liked .main-body {
+.like-icon.is-liked .main-body {
   fill: var(--heart-fill);
   transition: fill 0.3s 0.05s linear;
 }
 
 /* --------------------------------------------------------- */
 
-.heart-icon.heart-liked .contour {
+.like-icon.is-liked .contour {
   fill: var(--heart-fill);
   transition: fill 0.3s 0.06s linear;
 }
 
 /* --------------------------------------------------------- */
 
-.heart-icon.heart-liked .heart {
+.like-icon.is-liked .heart {
   transform-origin: center center;
   animation: heart-scale 0.3s 0.1s ease-in 2 alternate;
 }
@@ -127,7 +127,7 @@
 
 /* --------------------------------------------------------- */
 
-.heart-icon.heart-liked .sparks {
+.like-icon.is-liked .sparks {
   transform-origin: center center;
   animation: heart-sparks 0.3s 0.3s ease-in 2 alternate;
 }
@@ -145,7 +145,7 @@
 /* --------------------------------------------------------- */
 
 .card__button {
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, color 1s ease;
 }
 
 .card__button::after {
@@ -160,20 +160,4 @@
   
 .card__button:focus {
   box-shadow: 2px 2px 0 0 var(--accent-color);
-}
-
-/* --------------------------------------------------------- */
-
-.hue-rotate {
-  animation: filter 5s linear infinite;
-}
-
-@keyframes filter {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-
-  100% {
-    filter: hue-rotate(360deg);
-  }
 }
